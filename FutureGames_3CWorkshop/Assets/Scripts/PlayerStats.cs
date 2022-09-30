@@ -6,8 +6,11 @@ public class PlayerStats : MonoBehaviour
 {
     public int meter;
     
-    public int increaseMeter; // testing move to player dash
-    public int decreaseMeter; // testing move to enemy projectile
+    // Added these four for testing purposes
+    public int increaseMeter; 
+    public int decreaseMeter; 
+    public int maxMeter = 100;
+    public int minMeter = 0;
     
     
     public float dashCooldown;
@@ -42,6 +45,15 @@ public class PlayerStats : MonoBehaviour
         else
         {
             canDash = false;
+        }
+        // Added these two for testing purposes
+        if (meter > maxMeter)
+        {
+            meter = maxMeter;
+        }
+        if (meter < minMeter)
+        {
+            meter = minMeter;
         }
     }
 
