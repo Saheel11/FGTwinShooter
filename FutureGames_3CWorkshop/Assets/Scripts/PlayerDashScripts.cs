@@ -9,14 +9,17 @@ public class PlayerDashScripts : MonoBehaviour
     CharacterController characterController;
     int go;
 
-    public float dashFloat = 100;
+    public float dashFloat = 30;
     public float maxTimer;
     public float dashTimer;
 
-    [HideInInspector]
-    
-    public bool imDashing;
-    public Vector2 rightStickPosition;
+    public LayerMask mask;
+    public Collider[] colliders;
+
+    [HideInInspector] public bool imDashing;
+    [HideInInspector] public Vector2 rightStickPosition;
+
+    public RaycastHit hit;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +36,25 @@ public class PlayerDashScripts : MonoBehaviour
         Vector3 testDirection = new Vector3(rightStickPosition.x, 0, rightStickPosition.y);
 
 
+        //if(Physics.SphereCast(this.transform.position, 5 , -transform.up, out hit, mask))
+        //{
+
+        //    if(hit.collider != null)
+        //    {
+
+        //        Debug.Log("I Hit " + hit.collider.name);
+
+        //    }
+
+        //}
+        colliders = Physics.OverlapSphere(transform.position, 1, mask);
+  
+
+
+
+
+
+
         if (imDashing)
         {
           characterController.Move(transform.forward * dashFloat * Time.deltaTime);
@@ -45,7 +67,13 @@ public class PlayerDashScripts : MonoBehaviour
                 imDashing = false;
 
             }
+            foreach (var hitCollerer in colliders)
+            {
 
+                Debug.Log("iHit" + hitCollerer.gameObject.name);
+                Destroy(hitCollerer.gameObject);
+
+            }
         }
 
 
@@ -78,6 +106,9 @@ public class PlayerDashScripts : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, angle, 0);
         }
     }
+
+    
+
 
 
 }
