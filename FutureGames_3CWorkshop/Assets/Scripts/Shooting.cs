@@ -12,9 +12,11 @@ public class Shooting : MonoBehaviour
     
     public float projectileSpeed;
     
+    public int projectileAmmo;
+    
     public Vector2 rightStickPosition;
 
-    public bool isShooting;
+
     
     
 
@@ -24,10 +26,16 @@ public class Shooting : MonoBehaviour
 
     public void OnFire()
     {
-        isShooting = true;
-        GameObject projectileClone =
-            Instantiate(projectile, firePoint.transform.position, firePoint.transform.rotation);
+        if (projectileAmmo > 0)
+        {
+            GameObject projectileClone = Instantiate(projectile, firePoint.transform.position, firePoint.transform.rotation);
             projectileClone.GetComponent<Rigidbody>().AddForce(transform.forward * projectileSpeed);
+            projectileAmmo--;
+            Destroy(projectileClone, 2f);
+        }
+        
+            
+            
     }
     
     
