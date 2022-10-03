@@ -499,7 +499,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 788183898}
   projectile: {fileID: 526602851611003519, guid: 4c62671f9e75d6f4bad2eb496e600881, type: 3}
-  projectileSpeed: 0
+  projectileSpeed: 500
   rightStickPosition: {x: 0, y: 0}
   isShooting: 0
 --- !u!43 &87139165
