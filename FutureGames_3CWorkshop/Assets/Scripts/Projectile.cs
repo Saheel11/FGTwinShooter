@@ -5,15 +5,16 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    public String whatIHit;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "Destroyable") //Added if statement for it to destroy objects with name Destroyable in hierarchy
+        if (other.gameObject.layer == LayerMask.NameToLayer(whatIHit)) //Added if statement for it to destroy objects with name Destroyable in hierarchy
         {
-            Debug.Log("Hit destroyable");
+            Debug.Log("Hit Enemy");
             Destroy(other.gameObject);
         }
         
         Debug.Log("Projectile destroys itself");
-        Destroy(this.gameObject);
+        Destroy(this.gameObject, 5f);
     }
 }
