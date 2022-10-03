@@ -37,15 +37,14 @@ public class PlayerStats : MonoBehaviour
         if (dashCooldown > 0)
         {
             dashCooldown -= Time.deltaTime;
-        }
-        if (dashCooldown <= 0)
-        {
-            canDash = true;
+            canDash = false;
         }
         else
         {
-            canDash = false;
+            dashCooldown = 0;
+            canDash = true;
         }
+
         // Added these two for testing purposes
         if (meter > maxMeter)
         {
