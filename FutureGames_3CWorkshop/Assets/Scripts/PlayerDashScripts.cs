@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Remoting.Messaging;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,10 +9,14 @@ public class PlayerDashScripts : MonoBehaviour
     CharacterController characterController;
     int go;
 
-    [SerializeField]private float dashFloat = 100;
-    float dashTimer;
-    bool imDashing;
-    private Vector2 rightStickPosition;
+    public float dashFloat = 100;
+    public float maxTimer;
+    public float dashTimer;
+
+    [HideInInspector]
+    
+    public bool imDashing;
+    public Vector2 rightStickPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -30,9 +35,10 @@ public class PlayerDashScripts : MonoBehaviour
 
         if (imDashing)
         {
-            characterController.Move(transform.forward * dashFloat * Time.deltaTime);
+          characterController.Move(transform.forward * dashFloat * Time.deltaTime);
           //  imDashing = false;
-          dashTimer -=Time.deltaTime;  
+          dashTimer -=Time.deltaTime; 
+            
             if(dashTimer < 0)
             {
 
@@ -45,14 +51,14 @@ public class PlayerDashScripts : MonoBehaviour
 
         
     }
-    void OnDash()
+    public void OnDash()
     {
 
        
 
        
         imDashing = true;
-        dashTimer = 0.5f;
+        dashTimer = maxTimer;
         // go = 1;
 
 
@@ -62,7 +68,7 @@ public class PlayerDashScripts : MonoBehaviour
 
 
     }
-    private void OnLook(InputValue lookValue)
+    public void OnLook(InputValue lookValue)
     {
         rightStickPosition = lookValue.Get<Vector2>();
 
