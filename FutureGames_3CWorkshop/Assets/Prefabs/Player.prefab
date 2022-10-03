@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2737791783069023528}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GunEndPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 2737791783816450516}
   - component: {fileID: 2737791783816450517}
   - component: {fileID: 2737791783816450518}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,10 @@ GameObject:
   - component: {fileID: 2737791784416854578}
   - component: {fileID: 2737791784416854540}
   - component: {fileID: 2737791784416854541}
-  m_Layer: 0
+  - component: {fileID: 7767944449521785420}
+  - component: {fileID: 2379745700866262097}
+  - component: {fileID: 2627654512550365899}
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +165,7 @@ Transform:
   m_Children:
   - {fileID: 2737791784558644363}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &2737791784416854578
 CharacterController:
@@ -277,6 +280,66 @@ MonoBehaviour:
   accelerationDuration: 1.5
   decelerationDuration: 0.75
   isInputEnabled: 0
+--- !u!114 &7767944449521785420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2737791784416854579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 644e9e705a8baa74a8cb621c1e63c4be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerStats: {fileID: 0}
+  dashFloat: 30
+  maxTimer: 0.2
+  dashTimer: 0
+  mask:
+    serializedVersion: 2
+    m_Bits: 64
+  colliders: []
+  imDashing: 0
+  rightStickPosition: {x: 0, y: 0}
+  resetDashCooldown: 0
+--- !u!114 &2379745700866262097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2737791784416854579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 193e1f79c3649814a8719daef1a894e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 2737791783069023528}
+  projectile: {fileID: 526602851611003519, guid: 4c62671f9e75d6f4bad2eb496e600881, type: 3}
+  projectileSpeed: 500
+  projectileAmmo: 5
+  rightStickPosition: {x: 0, y: 0}
+--- !u!114 &2627654512550365899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2737791784416854579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a52b202178e388a499b5b6209ea2daf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meter: 50
+  increaseMeter: 10
+  decreaseMeter: 10
+  maxMeter: 100
+  minMeter: 0
+  dashCooldown: 0
+  dashStartCooldown: 5
+  canDash: 1
 --- !u!1 &2737791784558644364
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,7 +352,7 @@ GameObject:
   - component: {fileID: 2737791784558644360}
   - component: {fileID: 2737791784558644361}
   - component: {fileID: 2737791784558644362}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PlayerBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}

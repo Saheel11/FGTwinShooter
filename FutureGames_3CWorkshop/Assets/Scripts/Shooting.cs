@@ -30,6 +30,7 @@ public class Shooting : MonoBehaviour
         {
             GameObject projectileClone = Instantiate(projectile, firePoint.transform.position, firePoint.transform.rotation);
             projectileClone.GetComponent<Rigidbody>().AddForce(transform.forward * projectileSpeed);
+            projectileClone.GetComponent<Projectile>().whatIHit = "Enemy";
             projectileAmmo--;
             Destroy(projectileClone, 2f);
         }
