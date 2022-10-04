@@ -30,6 +30,9 @@ public class PlayerDashScripts : MonoBehaviour
     public AudioClip clipDash;
     public AudioClip clipDeath;
 
+    public GameObject dashParticle;
+    [HideInInspector] public GameObject dashParticlePosition;
+
 
     void Start()
     {
@@ -50,10 +53,14 @@ public class PlayerDashScripts : MonoBehaviour
         if (imDashing)
         {
           characterController.Move(transform.forward * dashFloat * Time.deltaTime);
+          
+          //dashParticle.transform.position = transform.position;
+          
           dashTimer -=Time.deltaTime; 
             
             if(dashTimer < 0)
             {
+                Destroy(dashParticlePosition);
                 imDashing = false;
             }
             foreach (var hitCollerer in colliders)
@@ -97,6 +104,7 @@ public class PlayerDashScripts : MonoBehaviour
             playerStats.StartDashCooldown();
             audioSource.clip = clipDash;
             audioSource.Play();
+            dashParticlePosition = Instantiate(dashParticle, transform);
         }   
 
     }
