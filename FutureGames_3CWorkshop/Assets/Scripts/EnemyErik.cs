@@ -84,7 +84,7 @@ public class EnemyErik : MonoBehaviour
         if (transform.position == new Vector3(enemyTargetPosition.x, enemyY, enemyTargetPosition.z) || timerMove <= 0)
         {
             enemyTargetPosition = new Vector3(Random.Range(1f, 20f), enemyY, Random.Range(1f, 20f));
-            Debug.Log("jejeaje");
+            //Debug.Log("jejeaje");
             timerMove = maxTimerMove;
         }
     }
@@ -97,7 +97,7 @@ public class EnemyErik : MonoBehaviour
         Debug.DrawRay(transform.position, transform.forward * 50f, Color.red, 0.01f);
         if (seePlayer)
         {
-            Debug.Log("hej" + result.collider.name);
+            //Debug.Log("hej" + result.collider.name);
             AttackPlayer();
         }
     }
