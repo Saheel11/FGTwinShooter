@@ -136,6 +136,10 @@ MonoBehaviour:
   playerHit: {fileID: 8300000, guid: 40bbf4a62b2bba246be248092ad54438, type: 3}
   enemieHit: {fileID: 8300000, guid: 7c156361722182e4a88b19b448790a72, type: 3}
   iHaveNotHit: 0
+  stunParticle: {fileID: 4786990670672457770, guid: 7d2c407f20f35ea43bc7ab99fe8b451c, type: 3}
+  stunParticleClone: {fileID: 0}
+  playerGotHitParticle: {fileID: 194198236839296399, guid: 933748abf069490489ad892dde779192, type: 3}
+  playerGotHitParticleClone: {fileID: 0}
 --- !u!82 &1778315195295901532
 AudioSource:
   m_ObjectHideFlags: 0
