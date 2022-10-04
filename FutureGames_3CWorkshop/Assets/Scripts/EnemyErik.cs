@@ -53,9 +53,7 @@ public class EnemyErik : MonoBehaviour
   }
 
     public void AttackPlayer()
-    {
-        //here we add that the enemy should stop, look towards the player and then shoot. after a while it should move again. 
-        //shoot projectile
+    {       
         transform.LookAt(playerTarget);
         if (timerShoot > 2 && canIShoot)
         {
@@ -63,7 +61,6 @@ public class EnemyErik : MonoBehaviour
             timerShoot = 0;
             
         }
-
     }
 
     void EnemyMove()         
@@ -87,6 +84,8 @@ public class EnemyErik : MonoBehaviour
             //Debug.Log("jejeaje");
             timerMove = maxTimerMove;
         }
+
+
     }
    
     void CheckForPlayer()
