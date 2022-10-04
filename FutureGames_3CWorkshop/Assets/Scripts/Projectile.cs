@@ -19,7 +19,7 @@ public class Projectile : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer(whatIHit)) //Added if statement for it to destroy objects with name Destroyable in hierarchy
         {
-            if (other.gameObject.layer == LayerMask.NameToLayer("OnlyPlayer"))
+            if (other.gameObject.name == "Player")
             {
                 playerStats = other.gameObject.GetComponent<PlayerStats>();
                 playerStats.DecreaseMeter();

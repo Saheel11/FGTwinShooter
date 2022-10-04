@@ -20,20 +20,6 @@ public class PlayerStats : MonoBehaviour
     
     void Update()
     {
-        //Testing with manual inputs
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            IncreaseMeter();
-        }
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            DecreaseMeter();
-        }
-        if (Input.GetKeyDown(KeyCode.Z) && canDash)
-        {
-            StartDashCooldown();
-        }
-         
         if (dashCooldown > 0)
         {
             dashCooldown -= Time.deltaTime;
@@ -44,27 +30,28 @@ public class PlayerStats : MonoBehaviour
             dashCooldown = 0;
             canDash = true;
         }
-
-        // Added these two for testing purposes
-        if (meter > maxMeter)
-        {
-            meter = maxMeter;
-        }
-        if (meter < minMeter)
-        {
-            meter = minMeter;
-        }
     }
 
 
     public void IncreaseMeter()
     {
-        meter += increaseMeter;
+        if (meter <= maxMeter)
+        {
+            meter += increaseMeter;
+        }
+        
     }
     
     public void DecreaseMeter()
     {
-        meter -= decreaseMeter;
+        if (meter > minMeter)
+        {
+            meter -= decreaseMeter;
+        }
+        else
+        {
+            meter = minMeter;
+        }
     }
 
     public void StartDashCooldown()
