@@ -293,6 +293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 0}
+  shooting: {fileID: 0}
   dashFloat: 30
   maxTimer: 0.2
   dashTimer: 0
@@ -303,6 +304,9 @@ MonoBehaviour:
   imDashing: 0
   rightStickPosition: {x: 0, y: 0}
   resetDashCooldown: 0
+  audioSource: {fileID: 0}
+  clipDash: {fileID: 8300000, guid: 06e12abeb141c57498ca1ab03a4c3d48, type: 3}
+  clipDeath: {fileID: 8300000, guid: 952b3802f193d074fb89d6a000ad8eb1, type: 3}
 --- !u!114 &2379745700866262097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,6 +324,8 @@ MonoBehaviour:
   projectileSpeed: 500
   projectileAmmo: 5
   rightStickPosition: {x: 0, y: 0}
+  audioSource: {fileID: 0}
+  shootingClip: {fileID: 8300000, guid: 8567084f3dfd25f428d3877d5856bbc1, type: 3}
 --- !u!114 &2627654512550365899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -403,7 +409,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 14fc015ca4f03974a9952c1a68d73d71, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -16,9 +16,15 @@ public class Shooting : MonoBehaviour
     
     public Vector2 rightStickPosition;
 
+    public AudioSource audioSource;
+    public AudioClip shootingClip;
 
-    
-    
+    private void Start()
+    {
+        
+        audioSource = GetComponent<AudioSource>();
+
+    }
 
     private void Update()
     {
@@ -32,7 +38,10 @@ public class Shooting : MonoBehaviour
             projectileClone.GetComponent<Rigidbody>().AddForce(transform.forward * projectileSpeed);
             projectileClone.GetComponent<Projectile>().whatIHit = "Enemy";
             projectileAmmo--;
+            audioSource.clip = shootingClip;
+            audioSource.Play();
             Destroy(projectileClone, 2f);
+
         }
         
             

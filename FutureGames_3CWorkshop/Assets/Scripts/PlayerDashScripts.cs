@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Remoting.Messaging;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.InputSystem;
 
 public class PlayerDashScripts : MonoBehaviour
@@ -25,12 +26,18 @@ public class PlayerDashScripts : MonoBehaviour
 
     public RaycastHit hit;
 
+    public AudioSource audioSource;
+    public AudioClip clipDash;
+    public AudioClip clipDeath;
+
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
         playerStats = GetComponent<PlayerStats>();
         shooting = GetComponent<Shooting>();
+        audioSource = GetComponent<AudioSource>();
+
     }
 
 
@@ -55,7 +62,29 @@ public class PlayerDashScripts : MonoBehaviour
                 playerStats.dashCooldown = resetDashCooldown;
                 playerStats.IncreaseMeter();
                 shooting.projectileAmmo++; // switch this to check how many player have killed
-                Destroy(hitCollerer.gameObject);
+
+                //hitCollerer.GetComponent<AudioSource>().clip = clipDeath;
+                if (hitCollerer.GetComponent<AudioSource>() != null)
+                {
+                    hitCollerer.GetComponent<AudioSource>().Play();
+
+                    if(hitCollerer.GetComponent<EnemyErik>() != null)
+                    {
+                        hitCollerer.GetComponent<EnemyErik>().canIShoot = false;
+                        hitCollerer.GetComponent<NavMeshAgent>().speed = 0;
+                        hitCollerer.GetComponent<BoxCollider>().enabled = false;
+                    }
+
+                    Destroy(hitCollerer.gameObject, 1.2f);
+                }
+                else
+                {
+                    Destroy(hitCollerer.gameObject);
+
+                }
+
+
+               // Destroy(hitCollerer.gameObject, 1.2f);
             }
         }
     }
@@ -66,6 +95,8 @@ public class PlayerDashScripts : MonoBehaviour
             imDashing = true;
             dashTimer = maxTimer;
             playerStats.StartDashCooldown();
+            audioSource.clip = clipDash;
+            audioSource.Play();
         }   
 
     }
