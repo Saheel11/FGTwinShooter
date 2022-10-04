@@ -24,6 +24,7 @@ public class EnemyErik : MonoBehaviour
 
     public float timerShoot;
     public float maxTimerShoot;
+    public bool canIShoot;
 
 
 
@@ -34,6 +35,7 @@ public class EnemyErik : MonoBehaviour
 
         timerShoot = maxTimerShoot;
         timerMove = maxTimerMove;
+        canIShoot = true;
     }
 
   void Update()
@@ -55,7 +57,7 @@ public class EnemyErik : MonoBehaviour
         //here we add that the enemy should stop, look towards the player and then shoot. after a while it should move again. 
         //shoot projectile
         transform.LookAt(playerTarget);
-        if (timerShoot > 2)
+        if (timerShoot > 2 && canIShoot)
         {
             OnFireEnemy();
             timerShoot = 0;
