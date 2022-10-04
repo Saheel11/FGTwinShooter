@@ -32,6 +32,8 @@ public class PlayerDashScripts : MonoBehaviour
 
     public GameObject dashParticle;
     [HideInInspector] public GameObject dashParticlePosition;
+    public GameObject hitEnemyParticle;
+    [HideInInspector] public GameObject hitEnemyParticleClone;
 
 
     void Start()
@@ -69,6 +71,9 @@ public class PlayerDashScripts : MonoBehaviour
                 playerStats.dashCooldown = resetDashCooldown;
                 playerStats.IncreaseMeter();
                 shooting.projectileAmmo++; // switch this to check how many player have killed
+                
+                hitEnemyParticleClone = Instantiate(hitEnemyParticle, hitCollerer.transform);
+                
 
                 //hitCollerer.GetComponent<AudioSource>().clip = clipDeath;
                 if (hitCollerer.GetComponent<AudioSource>() != null)

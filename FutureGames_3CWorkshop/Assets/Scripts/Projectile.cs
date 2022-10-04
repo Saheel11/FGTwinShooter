@@ -21,6 +21,12 @@ public class Projectile : MonoBehaviour
     public AudioClip enemieHit;
 
     public bool iHaveNotHit;
+    
+    public GameObject stunParticle;
+    [HideInInspector] public GameObject stunParticleClone;
+    
+    public GameObject playerGotHitParticle;
+    [HideInInspector] public GameObject playerGotHitParticleClone;
 
 
     private void Start()
@@ -40,10 +46,12 @@ public class Projectile : MonoBehaviour
             {
                 audioSource.clip = playerHit;
                 audioSource.Play();
-
                 playerStats = other.gameObject.GetComponent<PlayerStats>();
                 playerStats.DecreaseMeter();
+                playerGotHitParticleClone = Instantiate(playerGotHitParticle, other.transform);
+                Destroy(playerGotHitParticleClone, 1f);
                 Debug.Log("Projectile destroys itself");
+                iHaveNotHit = false;
                 Destroy(this.gameObject, 1f);
             }
 
@@ -55,15 +63,16 @@ public class Projectile : MonoBehaviour
                 enemyScript = other.gameObject.GetComponent<EnemyErik>();
                 enemyAgent.speed = 0;
                 enemyScript.canIShoot = false;
+                stunParticleClone = Instantiate(stunParticle, other.transform);
                 Debug.Log("Projectile destroys itself");
-                
+                iHaveNotHit = false;
                 Destroy(this.gameObject, 1f);
             }
 
-          ;
+          
             GetComponent<MeshRenderer>().enabled = false;
            
-            iHaveNotHit = false;
+
         }
         
 
