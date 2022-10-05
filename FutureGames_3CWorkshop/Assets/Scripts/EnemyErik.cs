@@ -25,12 +25,19 @@ public class EnemyErik : MonoBehaviour
     public float timerShoot;
     public float maxTimerShoot;
     public bool canIShoot;
+    
+    [Header("Values for random positions")] 
+    public float minXValue = 1;
+    public float maxXValue = 50;
+    public float minZValue = 1;
+    public float maxZValue = 50;
 
 
 
     void Start()
     {
-        enemyTargetPosition = new Vector3(Random.Range(1f, 20f), enemyY, Random.Range(1f, 20f));
+        enemyTargetPosition = new Vector3(Random.Range(minXValue, maxXValue), enemyY, 
+            Random.Range(minZValue, maxZValue));
         enemyAgent = GetComponent<NavMeshAgent>();
 
         timerShoot = maxTimerShoot;
@@ -80,7 +87,7 @@ public class EnemyErik : MonoBehaviour
 
         if (transform.position == new Vector3(enemyTargetPosition.x, enemyY, enemyTargetPosition.z) || timerMove <= 0)
         {
-            enemyTargetPosition = new Vector3(Random.Range(1f, 20f), enemyY, Random.Range(1f, 20f));
+            enemyTargetPosition = new Vector3(Random.Range(minXValue, maxXValue), enemyY, Random.Range(minZValue, maxZValue));
             //Debug.Log("jejeaje");
             timerMove = maxTimerMove;
         }

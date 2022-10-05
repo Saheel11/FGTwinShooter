@@ -375,10 +375,14 @@ MonoBehaviour:
   maxTimerMove: 5
   firePoint: {fileID: 5398105593682488440}
   projectile: {fileID: 526602851611003519, guid: 4c62671f9e75d6f4bad2eb496e600881, type: 3}
-  projectileSpeed: 300
+  projectileSpeed: 500
   timerShoot: 0
   maxTimerShoot: 0
   canIShoot: 1
+  minXValue: 1
+  maxXValue: 50
+  minZValue: 1
+  maxZValue: 50
 --- !u!195 &8990729160175489504
 NavMeshAgent:
   m_ObjectHideFlags: 0
