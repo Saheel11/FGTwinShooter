@@ -10,6 +10,12 @@ public class EnemyManager : MonoBehaviour
     public float enemySpawnTimer;
     public int amountOfEnemiesSpawned;
     public int enemySpawnTimeCooldown = 5;
+    
+    [Header("Random Spawn Positions")]
+    public float minXValue = 1;
+    public float maxXValue = 50;
+    public float minZValue = 1;
+    public float maxZValue = 50;
 
     private void FixedUpdate()
     {
@@ -37,6 +43,6 @@ public class EnemyManager : MonoBehaviour
     public void SpawnNewEnemies() // instantiates enemies randomly on the x and z axis
     {
         GameObject newEnemy = Instantiate(enemyPrefab);
-        newEnemy.transform.position = new Vector3(Random.Range(1f, 10f), 0, Random.Range(1f, 10f));
+        newEnemy.transform.position = new Vector3(Random.Range(minXValue, maxXValue), 0, Random.Range(minZValue, maxZValue));
     }
 }
