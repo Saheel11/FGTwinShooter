@@ -135,6 +135,7 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   playerHit: {fileID: 8300000, guid: 40bbf4a62b2bba246be248092ad54438, type: 3}
   enemieHit: {fileID: 8300000, guid: 7c156361722182e4a88b19b448790a72, type: 3}
+  litHit: {fileID: 8300000, guid: e69b106701772554fbe559fea3367a1c, type: 3}
   iHaveNotHit: 0
   stunParticle: {fileID: 4786990670672457770, guid: 7d2c407f20f35ea43bc7ab99fe8b451c, type: 3}
   stunParticleClone: {fileID: 0}

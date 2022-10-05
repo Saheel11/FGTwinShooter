@@ -19,6 +19,7 @@ public class Projectile : MonoBehaviour
 
     public AudioClip playerHit;
     public AudioClip enemieHit;
+    public AudioClip litHit;
 
     public bool iHaveNotHit;
     
@@ -44,12 +45,31 @@ public class Projectile : MonoBehaviour
         {
             if (other.gameObject.name == "Player")
             {
-                audioSource.clip = playerHit;
-                audioSource.Play();
-                playerStats = other.gameObject.GetComponent<PlayerStats>();
-                playerStats.DecreaseMeter();
-                playerGotHitParticleClone = Instantiate(playerGotHitParticle, other.transform);
-                Destroy(playerGotHitParticleClone, 1f);
+                if(other.GetComponent<PlayerDashScripts>().imDashing == true)
+                {
+
+                    audioSource.clip = litHit;
+                    audioSource.Play();
+
+                }
+                else
+                {
+
+                    audioSource.clip = playerHit;
+                    audioSource.Play();
+                    playerStats = other.gameObject.GetComponent<PlayerStats>();
+                    playerStats.DecreaseMeter();
+                    playerGotHitParticleClone = Instantiate(playerGotHitParticle, other.transform);
+                    Destroy(playerGotHitParticleClone, 1f);
+
+                }
+
+                //audioSource.clip = playerHit;
+                //audioSource.Play();
+                //playerStats = other.gameObject.GetComponent<PlayerStats>();
+                //playerStats.DecreaseMeter();
+                //playerGotHitParticleClone = Instantiate(playerGotHitParticle, other.transform);
+                //Destroy(playerGotHitParticleClone, 1f);
                 Debug.Log("Projectile destroys itself");
                 iHaveNotHit = false;
                 Destroy(this.gameObject, 1f);
