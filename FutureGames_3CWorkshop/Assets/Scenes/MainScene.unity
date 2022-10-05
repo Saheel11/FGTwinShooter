@@ -109,7 +109,7 @@ NavMeshSettings:
     agentRadius: 0.5
     agentHeight: 2
     agentSlope: 45
-    agentClimb: 0.4
+    agentClimb: 0.3
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 54756584}
   - component: {fileID: 54756583}
   m_Layer: 0
-  m_Name: Wall (25)
+  m_Name: Fence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,8 +150,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 54756581}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.07, y: 1.28, z: -24.16}
-  m_LocalScale: {x: 1, y: 2, z: 13.476304}
+  m_LocalPosition: {x: -1.07, y: 0.66, z: -24.16}
+  m_LocalScale: {x: 1, y: 0.62833196, z: 13.476304}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1932254980}
@@ -190,7 +190,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 359e237fd8094f246a0285e8976385d1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 100590982}
   - component: {fileID: 100590981}
   m_Layer: 0
-  m_Name: Wall (22)
+  m_Name: Fence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -247,8 +247,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100590979}
   m_LocalRotation: {x: -0, y: -0.36496174, z: -0, w: 0.9310225}
-  m_LocalPosition: {x: -14.8, y: 1.28, z: -15.1}
-  m_LocalScale: {x: 1, y: 2, z: 18.583136}
+  m_LocalPosition: {x: -14.8, y: 0.66, z: -15.1}
+  m_LocalScale: {x: 1, y: 0.62833196, z: 18.583136}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1932254980}
@@ -287,7 +287,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 359e237fd8094f246a0285e8976385d1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -652,7 +652,7 @@ GameObject:
   - component: {fileID: 234534579}
   - component: {fileID: 234534578}
   m_Layer: 0
-  m_Name: Wall (27)
+  m_Name: Fence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -666,8 +666,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 234534576}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.21, y: 1.28, z: -3.62}
-  m_LocalScale: {x: 1, y: 2, z: 6.504469}
+  m_LocalPosition: {x: 0.21, y: 0.66, z: -3.62}
+  m_LocalScale: {x: 1, y: 0.62833196, z: 6.504469}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1932254980}
@@ -706,7 +706,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 359e237fd8094f246a0285e8976385d1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1743,7 +1743,7 @@ GameObject:
   - component: {fileID: 851710857}
   - component: {fileID: 851710856}
   m_Layer: 0
-  m_Name: Wall (30)
+  m_Name: Fence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1757,8 +1757,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 851710854}
   m_LocalRotation: {x: -0, y: -0.7114303, z: -0, w: 0.70275664}
-  m_LocalPosition: {x: -26.7, y: 1.28, z: 0.1}
-  m_LocalScale: {x: 1, y: 2, z: 18.583136}
+  m_LocalPosition: {x: -26.7, y: 0.66, z: 0.1}
+  m_LocalScale: {x: 1, y: 0.62833196, z: 18.583136}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1932254980}
@@ -1797,7 +1797,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 359e237fd8094f246a0285e8976385d1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7474,7 +7474,7 @@ GameObject:
   - component: {fileID: 1199485669}
   - component: {fileID: 1199485668}
   m_Layer: 0
-  m_Name: Wall (32)
+  m_Name: Fence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7488,8 +7488,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1199485666}
   m_LocalRotation: {x: -0, y: -0.36496174, z: -0, w: 0.9310225}
-  m_LocalPosition: {x: 15.8, y: 1.28, z: 15.9}
-  m_LocalScale: {x: 1, y: 2, z: 18.583136}
+  m_LocalPosition: {x: 15.8, y: 0.66, z: 15.9}
+  m_LocalScale: {x: 1, y: 0.62833196, z: 18.583136}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1932254980}
@@ -7528,7 +7528,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 359e237fd8094f246a0285e8976385d1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7906,7 +7906,7 @@ GameObject:
   - component: {fileID: 1473764350}
   - component: {fileID: 1473764349}
   m_Layer: 0
-  m_Name: Wall (23)
+  m_Name: Fence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7920,8 +7920,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1473764347}
   m_LocalRotation: {x: -0, y: -0.7114303, z: -0, w: 0.70275664}
-  m_LocalPosition: {x: 25.7, y: 1.28, z: -0.7}
-  m_LocalScale: {x: 1, y: 2, z: 18.583136}
+  m_LocalPosition: {x: 25.7, y: 0.66, z: -0.7}
+  m_LocalScale: {x: 1, y: 0.62833196, z: 18.583136}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1932254980}
@@ -7960,7 +7960,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 359e237fd8094f246a0285e8976385d1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8392,7 +8392,7 @@ GameObject:
   - component: {fileID: 1737512001}
   - component: {fileID: 1737512000}
   m_Layer: 0
-  m_Name: Wall (31)
+  m_Name: Fence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8406,8 +8406,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1737511998}
   m_LocalRotation: {x: -0, y: 0.43485653, z: -0, w: 0.9004998}
-  m_LocalPosition: {x: -18, y: 1.28, z: 16}
-  m_LocalScale: {x: 1, y: 2, z: 15.837}
+  m_LocalPosition: {x: -18, y: 0.66, z: 16}
+  m_LocalScale: {x: 1, y: 0.62833196, z: 15.837}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1932254980}
@@ -8446,7 +8446,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 359e237fd8094f246a0285e8976385d1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8520,7 +8520,7 @@ GameObject:
   - component: {fileID: 1774818561}
   - component: {fileID: 1774818560}
   m_Layer: 0
-  m_Name: Wall (24)
+  m_Name: Fence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8534,8 +8534,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1774818558}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.7, y: 1.28, z: 20.5}
-  m_LocalScale: {x: 1, y: 2, z: 18.583136}
+  m_LocalPosition: {x: -0.7, y: 0.66, z: 20.5}
+  m_LocalScale: {x: 1, y: 0.62833196, z: 18.583136}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1932254980}
@@ -8574,7 +8574,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 359e237fd8094f246a0285e8976385d1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8714,7 +8714,7 @@ GameObject:
   - component: {fileID: 1879286356}
   - component: {fileID: 1879286355}
   m_Layer: 0
-  m_Name: Wall (21)
+  m_Name: Fence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8728,8 +8728,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1879286353}
   m_LocalRotation: {x: -0, y: 0.43485653, z: -0, w: 0.9004998}
-  m_LocalPosition: {x: 11.6, y: 1.28, z: -16.6}
-  m_LocalScale: {x: 1, y: 2, z: 15.837}
+  m_LocalPosition: {x: 11.6, y: 0.66, z: -16.6}
+  m_LocalScale: {x: 1, y: 0.62833196, z: 15.837}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1932254980}
@@ -8768,7 +8768,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 359e237fd8094f246a0285e8976385d1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8961,7 +8961,7 @@ GameObject:
   - component: {fileID: 1954731078}
   - component: {fileID: 1954731077}
   m_Layer: 0
-  m_Name: Wall (28)
+  m_Name: Fence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8975,8 +8975,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1954731075}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.65, y: 1.28, z: -0.26}
-  m_LocalScale: {x: 1, y: 2, z: 6.504469}
+  m_LocalPosition: {x: 7.65, y: 0.66, z: -0.26}
+  m_LocalScale: {x: 1, y: 0.62833196, z: 6.504469}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1932254980}
@@ -9015,7 +9015,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 359e237fd8094f246a0285e8976385d1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9352,7 +9352,7 @@ GameObject:
   - component: {fileID: 2106141423}
   - component: {fileID: 2106141422}
   m_Layer: 0
-  m_Name: Wall (26)
+  m_Name: Fence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9366,8 +9366,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2106141420}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.21, y: 1.28, z: 3.02}
-  m_LocalScale: {x: 1, y: 2, z: 6.504469}
+  m_LocalPosition: {x: 0.21, y: 0.66, z: 3.02}
+  m_LocalScale: {x: 1, y: 0.62833196, z: 6.504469}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1932254980}
@@ -9406,7 +9406,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 359e237fd8094f246a0285e8976385d1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9546,7 +9546,7 @@ GameObject:
   - component: {fileID: 2143421412}
   - component: {fileID: 2143421411}
   m_Layer: 0
-  m_Name: Wall (29)
+  m_Name: Fence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9560,8 +9560,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2143421409}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.25, y: 1.28, z: -0.55}
-  m_LocalScale: {x: 1, y: 2, z: 6.504469}
+  m_LocalPosition: {x: -7.25, y: 0.66, z: -0.55}
+  m_LocalScale: {x: 1, y: 0.62833196, z: 6.504469}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1932254980}
@@ -9600,7 +9600,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 359e237fd8094f246a0285e8976385d1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
