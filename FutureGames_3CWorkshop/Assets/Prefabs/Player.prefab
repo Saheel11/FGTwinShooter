@@ -313,7 +313,7 @@ MonoBehaviour:
   hitEnemyParticle: {fileID: 3302062870759130382, guid: e7857b6bba0c6684a91744c8b48eaa5e, type: 3}
   hitEnemyParticleClone: {fileID: 0}
   transformer: {fileID: 0}
-  playerTransform: {fileID: 0}
+  playerTransform: {fileID: 5381551921105551270, guid: 8d69720ace4b58142913ff19d7dd7ed6, type: 3}
 --- !u!114 &2379745700866262097
 MonoBehaviour:
   m_ObjectHideFlags: 0
