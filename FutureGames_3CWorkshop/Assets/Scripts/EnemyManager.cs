@@ -6,10 +6,10 @@ using Random = UnityEngine.Random;
 
 public class EnemyManager : MonoBehaviour
 {
-    public GameObject enemyPrefab; //DET H�R �R GAMEOBJECTET VI SPAWNAR
-    public float enemySpawnTimer; //DEN H�R TICKAR UPP HELA TIDEN OCH J�MF�RS MED SPWANCOOLDOWN
-    public int amountOfEnemiesSpawned; //DEN H�R L�GGER TILL EN VARJE G�NG EN ENEMY SPAWNAR. VI ANV�NDER DEN F�R ATT G�RA ETT IF STATEMENT SOM �NDRAR CD P� SPWAN
-    public int enemySpawnTimeCooldown = 5; //V�RAN URSPRINGLIGA CD P� SPAWN. �NDRAS UNDER SPELETS G�NG
+    public GameObject enemyPrefab;
+    public float enemySpawnTimer;
+    public int amountOfEnemiesSpawned; 
+    public float enemySpawnTimeCooldown = 5; 
 
     [SerializeField] Transform[] possibleSpawnPositions;
     bool[] usedSpawnPositions;
@@ -40,23 +40,23 @@ public class EnemyManager : MonoBehaviour
         // Decrease time between enemies spawning depending on the meter
         if (playerStats.meter >= 80) 
         {
-            enemySpawnTimeCooldown = 1;
+            enemySpawnTimeCooldown = 0.5f;
         }
         else if (playerStats.meter >= 60) 
         {
-            enemySpawnTimeCooldown = 2;
+            enemySpawnTimeCooldown = 1;
         }
         else if (playerStats.meter >= 40) 
         {
-            enemySpawnTimeCooldown = 3;
+            enemySpawnTimeCooldown = 1.25f;
         }
         else if (playerStats.meter >= 20) 
         {
-            enemySpawnTimeCooldown = 4;
+            enemySpawnTimeCooldown = 1.5f;
         }
         else if (playerStats.meter < 20)
         {
-            enemySpawnTimeCooldown = 5;
+            enemySpawnTimeCooldown = 2;
         }
     }
     
