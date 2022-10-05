@@ -34,7 +34,8 @@ public class PlayerDashScripts : MonoBehaviour
     [HideInInspector] public GameObject dashParticlePosition;
     public GameObject hitEnemyParticle;
     [HideInInspector] public GameObject hitEnemyParticleClone;
-
+    public Transform transformer;
+    public Transform playerTransform;
 
     void Start()
     {
@@ -42,19 +43,21 @@ public class PlayerDashScripts : MonoBehaviour
         playerStats = GetComponent<PlayerStats>();
         shooting = GetComponent<Shooting>();
         audioSource = GetComponent<AudioSource>();
-
+        transformer = Instantiate(playerTransform, transform);
     }
 
 
     void Update()
     {
+
+        transformer.position = transform.position;
         Vector3 testDirection = new Vector3(rightStickPosition.x, 0, rightStickPosition.y);
         
         colliders = Physics.OverlapSphere(transform.position, 1, mask);
   
         if (imDashing)
         {
-          characterController.Move(transform.forward * dashFloat * Time.deltaTime);
+          characterController.Move(transformer.transform.forward * dashFloat * Time.deltaTime);
           
           //dashParticle.transform.position = transform.position;
           
@@ -123,7 +126,7 @@ public class PlayerDashScripts : MonoBehaviour
         if (rightStickPosition != Vector2.zero)
         {
             float angle = Mathf.Atan2(rightStickPosition.x, rightStickPosition.y) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, angle, 0);
+            transformer.rotation = Quaternion.Euler(0, angle, 0);
         }
     }
 }

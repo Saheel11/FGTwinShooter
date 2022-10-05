@@ -306,12 +306,14 @@ MonoBehaviour:
   rightStickPosition: {x: 0, y: 0}
   resetDashCooldown: 0
   audioSource: {fileID: 0}
-  clipDash: {fileID: 8300000, guid: 06e12abeb141c57498ca1ab03a4c3d48, type: 3}
+  clipDash: {fileID: 8300000, guid: 44355c5e663fc2448854a5f6087b8fc1, type: 3}
   clipDeath: {fileID: 8300000, guid: ddf6b05ffdc54064dab78974f8649e4f, type: 3}
   dashParticle: {fileID: 2945768715448541131, guid: 9eff35df02189c642bd4cea4c9f18909, type: 3}
   dashParticlePosition: {fileID: 0}
   hitEnemyParticle: {fileID: 3302062870759130382, guid: e7857b6bba0c6684a91744c8b48eaa5e, type: 3}
   hitEnemyParticleClone: {fileID: 0}
+  transformer: {fileID: 0}
+  playerTransform: {fileID: 0}
 --- !u!114 &2379745700866262097
 MonoBehaviour:
   m_ObjectHideFlags: 0
