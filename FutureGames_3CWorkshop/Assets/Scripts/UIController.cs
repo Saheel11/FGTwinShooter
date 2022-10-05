@@ -13,7 +13,7 @@ public class UIController : MonoBehaviour
     public Slider cooldownSlider;
     public TextMeshProUGUI cooldownText;
 
-
+    public Image[] ammoList;
 
     
     private void Update()
@@ -22,4 +22,36 @@ public class UIController : MonoBehaviour
         meterSlider.value = player.GetComponent<PlayerStats>().meter;
         cooldownSlider.value = player.GetComponent<PlayerStats>().dashCooldown;
     }
+
+
+    public void ammoShow(int whichAmmo)
+    {
+
+
+        for(int i = 0; i < ammoList.Length; i++)
+        {
+
+            int countAmmo = whichAmmo - 1;
+
+            if(countAmmo >= i)
+            {
+                ammoList[i].enabled = true;
+
+
+            }
+            else
+            {
+                ammoList[i].enabled = false;
+
+
+            }
+
+
+        }
+
+
+    }
+
+    
+
 }
