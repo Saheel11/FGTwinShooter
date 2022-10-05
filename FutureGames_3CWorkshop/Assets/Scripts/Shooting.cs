@@ -20,15 +20,27 @@ public class Shooting : MonoBehaviour
     public AudioClip shootingClip;
 
     public UIController uiController;
-
+    
   
 
     private void Start()
     {
         
         audioSource = GetComponent<AudioSource>();
+        GameObject[] ui = GameObject.FindGameObjectsWithTag("UI");
+        foreach(GameObject go in ui)
+        {
+            if(go.GetComponent<UIController>() != null)
+            {
+                uiController = go.GetComponent<UIController>();
 
+            }
+           //uiController = go.GetComponent<UIController>();
+
+        }
     }
+
+
 
     private void Update()
     {
