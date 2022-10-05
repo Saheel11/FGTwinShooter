@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24386
+  m_Name: pb_Mesh55006
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -510,17 +510,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!114 &482289949 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6908943716506935410, guid: c42b56cd2f5dd0845998f09fef5d39c9, type: 3}
-  m_PrefabInstance: {fileID: 183507714}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6830664c87f2f0c45af76d5d8fd3dac3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &508592702
 GameObject:
   m_ObjectHideFlags: 0
@@ -6327,10 +6316,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2379745700866262097, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
-      propertyPath: uiController
-      value: 
-      objectReference: {fileID: 482289949}
     - target: {fileID: 2627654512550365899, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
       propertyPath: meter
       value: 0
@@ -6402,7 +6387,7 @@ PrefabInstance:
     - target: {fileID: 7767944449521785420, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
       propertyPath: clipDeath
       value: 
-      objectReference: {fileID: 8300000, guid: ddf6b05ffdc54064dab78974f8649e4f, type: 3}
+      objectReference: {fileID: 8300000, guid: 952b3802f193d074fb89d6a000ad8eb1, type: 3}
     - target: {fileID: 7767944449521785420, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
       propertyPath: audioSource
       value: 
@@ -6548,7 +6533,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24360
+  m_Name: pb_Mesh54968
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2

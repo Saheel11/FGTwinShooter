@@ -19,6 +19,10 @@ public class Shooting : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip shootingClip;
 
+    public UIController uiController;
+
+  
+
     private void Start()
     {
         
@@ -37,7 +41,10 @@ public class Shooting : MonoBehaviour
             GameObject projectileClone = Instantiate(projectile, firePoint.transform.position, firePoint.transform.rotation);
             projectileClone.GetComponent<Rigidbody>().AddForce(transform.forward * projectileSpeed);
             projectileClone.GetComponent<Projectile>().whatIHit = "Enemy";
-            projectileAmmo--;
+            projectileClone.GetComponent<SphereCollider>().radius = 1;
+            
+            //projectileAmmo--;
+            IncreaseAmmo(-1);
             audioSource.clip = shootingClip;
             audioSource.Play();
             Destroy(projectileClone, 2f);
@@ -59,4 +66,18 @@ public class Shooting : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, angle, 0);
         }
     }
+
+    public void IncreaseAmmo(int ammoincrease)
+    {
+
+
+
+        projectileAmmo = Mathf.Clamp(projectileAmmo, 0, 6);
+
+        projectileAmmo += ammoincrease;
+        uiController.ammoShow(projectileAmmo);
+
+
+    }
+
 }

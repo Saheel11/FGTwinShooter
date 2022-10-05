@@ -70,8 +70,8 @@ public class PlayerDashScripts : MonoBehaviour
                 Debug.Log("iHit" + hitCollerer.gameObject.name);
                 playerStats.dashCooldown = resetDashCooldown;
                 playerStats.IncreaseMeter();
-                shooting.projectileAmmo++; // switch this to check how many player have killed
-                
+                shooting.IncreaseAmmo(1); // switch this to check how many player have killed
+                Debug.Log(shooting.projectileAmmo);
                 hitEnemyParticleClone = Instantiate(hitEnemyParticle, hitCollerer.transform);
                 
 
@@ -113,8 +113,10 @@ public class PlayerDashScripts : MonoBehaviour
         }   
 
     }
+
+
     
-    public void OnLook(InputValue lookValue)
+    public void OnMove(InputValue lookValue)
     {
         rightStickPosition = lookValue.Get<Vector2>();
 
