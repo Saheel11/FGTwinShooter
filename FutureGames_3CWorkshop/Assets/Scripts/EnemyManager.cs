@@ -8,41 +8,76 @@ public class EnemyManager : MonoBehaviour
 {
     public GameObject enemyPrefab;
     public float enemySpawnTimer;
-    public int amountOfEnemiesSpawned;
-    public int enemySpawnTimeCooldown = 5;
-    
-    [Header("Random Spawn Positions")]
-    public float minXValue = 1;
-    public float maxXValue = 50;
-    public float minZValue = 1;
-    public float maxZValue = 50;
+    public int amountOfEnemiesSpawned; 
+    public float enemySpawnTimeCooldown = 5; 
 
+    [SerializeField] Transform[] possibleSpawnPositions;
+    bool[] usedSpawnPositions;
+    public PlayerStats playerStats;
+    private int[] enemyAmount;
+
+
+    int checkedSpawnPositions;
+    
+    private void Awake()
+    {
+        //usedSpawnPositions = new bool[possibleSpawnPositions.Length];
+    }
+    private void Start()
+    {
+       //possibleSpawnPositions = new Transform[10];
+    }
     private void FixedUpdate()
     {
         enemySpawnTimer += Time.deltaTime; //Starting timer for enemy to spawn
         if (enemySpawnTimer >= enemySpawnTimeCooldown)
         {
             Debug.Log("Spawning 1 enemy");
-            SpawnNewEnemies();
+            RandomSpawn();
             enemySpawnTimer = 0; //resets timer to 0 every time an enemy spawn
-            amountOfEnemiesSpawned++; //increase an int to check how many enemies have spawned
         }
         
-        // For testing purposes, if we want more enemies to spawn
-        if (amountOfEnemiesSpawned == 5) //if five enemies in total have spawned, decrease spawnTime to 3
+        // Decrease time between enemies spawning depending on the meter
+        if (playerStats.meter >= 80) 
         {
-            enemySpawnTimeCooldown = 3;
+            enemySpawnTimeCooldown = 0.5f;
         }
-        
-        if (amountOfEnemiesSpawned == 10) //if ten enemies in total have spawned, decrease spawnTime to 1
+        else if (playerStats.meter >= 60) 
         {
             enemySpawnTimeCooldown = 1;
         }
+        else if (playerStats.meter >= 40) 
+        {
+            enemySpawnTimeCooldown = 1.25f;
+        }
+        else if (playerStats.meter >= 20) 
+        {
+            enemySpawnTimeCooldown = 1.5f;
+        }
+        else if (playerStats.meter < 20)
+        {
+            enemySpawnTimeCooldown = 2;
+        }
     }
-
-    public void SpawnNewEnemies() // instantiates enemies randomly on the x and z axis
+    
+    public void RandomSpawn()
     {
-        GameObject newEnemy = Instantiate(enemyPrefab);
-        newEnemy.transform.position = new Vector3(Random.Range(minXValue, maxXValue), 0, Random.Range(minZValue, maxZValue));
+        int spawnIndex = Random.Range(0, possibleSpawnPositions.Length);
+            
+            if (spawnIndex == checkedSpawnPositions)
+            {
+                spawnIndex++;
+                spawnIndex %= possibleSpawnPositions.Length;
+              
+            }    
+        
+            if (spawnIndex > possibleSpawnPositions.Length)
+            {
+                spawnIndex = 0;
+            }
+
+            GameObject newEnemy = Instantiate(enemyPrefab, possibleSpawnPositions[spawnIndex].position, possibleSpawnPositions[spawnIndex].rotation);
+            checkedSpawnPositions = spawnIndex;
+
     }
 }
