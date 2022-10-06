@@ -141,6 +141,9 @@ MonoBehaviour:
   stunParticleClone: {fileID: 0}
   playerGotHitParticle: {fileID: 194198236839296399, guid: 933748abf069490489ad892dde779192, type: 3}
   playerGotHitParticleClone: {fileID: 0}
+  mr: {fileID: 0}
+  plBulletMat: {fileID: 2100000, guid: 14fc015ca4f03974a9952c1a68d73d71, type: 2}
+  enemeyBulletMat: {fileID: 2100000, guid: 6427297d5bdb6c347b47f149aac2369b, type: 2}
 --- !u!82 &1778315195295901532
 AudioSource:
   m_ObjectHideFlags: 0
