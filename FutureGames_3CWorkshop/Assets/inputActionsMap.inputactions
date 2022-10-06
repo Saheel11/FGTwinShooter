@@ -58,6 +58,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "LongDash",
+                    "type": "Button",
+                    "id": "a404d225-0cc2-457b-adaa-37fae9b4e537",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -333,6 +342,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Karl",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "829fe9b5-f7e1-4f23-9d4f-e187ac34492b",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LongDash",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
