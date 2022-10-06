@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/LoseScene.unity
     guid: bb6628c67590c1b48bdf4b195a88418b
   - enabled: 0
-    path: Assets/Scenes/GamestateScene.unity
+    path: Assets/Scenes/TestingScenes/GamestateScene.unity
     guid: 9770bece7874d794cba6c6bfc3d644a4
   - enabled: 1
     path: Assets/Scenes/WinScene.unity

@@ -25,21 +25,7 @@ public class UIController : MonoBehaviour
             cooldownSlider.value = player.GetComponent<PlayerStats>().dashCooldown;
         }
         
-        /*{
-            cooldownText.enabled = false;
-            meterSlider.enabled = false;
-            cooldownSlider.enabled = false;
-
-            foreach (Image ammo in ammoList)
-            {
-                ammo.enabled = false;
-            }
-                */
-
-        
-        
-
-       
+     
     }
 
 

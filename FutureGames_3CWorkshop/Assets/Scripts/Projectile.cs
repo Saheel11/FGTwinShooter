@@ -31,9 +31,9 @@ public class Projectile : MonoBehaviour
 
     public MeshRenderer mr;
 
-    public Material plBulletMat;
+    public Material playerBulletMat;
 
-    public Material enemeyBulletMat;
+    public Material enemyBulletMat;
 
     private void Start()
     {
@@ -41,7 +41,7 @@ public class Projectile : MonoBehaviour
         mr = GetComponent<MeshRenderer>();
         if(whatIHit =="Enemy")
         {
-            mr.material = plBulletMat;
+            mr.material = playerBulletMat;
 
 
 
@@ -49,7 +49,7 @@ public class Projectile : MonoBehaviour
         else
         {
 
-            mr.material = enemeyBulletMat;
+            mr.material = enemyBulletMat;
 
         }
 
@@ -62,7 +62,7 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer(whatIHit) && iHaveNotHit) //Added if statement for it to destroy objects with name Destroyable in hierarchy
+        if (other.gameObject.layer == LayerMask.NameToLayer(whatIHit) && iHaveNotHit)
         {
             if (other.gameObject.name == "Player")
             {
@@ -85,13 +85,6 @@ public class Projectile : MonoBehaviour
 
                 }
 
-                //audioSource.clip = playerHit;
-                //audioSource.Play();
-                //playerStats = other.gameObject.GetComponent<PlayerStats>();
-                //playerStats.DecreaseMeter();
-                //playerGotHitParticleClone = Instantiate(playerGotHitParticle, other.transform);
-                //Destroy(playerGotHitParticleClone, 1f);
-                Debug.Log("Projectile destroys itself");
                 iHaveNotHit = false;
                 Destroy(this.gameObject, 1f);
             }
@@ -105,13 +98,12 @@ public class Projectile : MonoBehaviour
                 enemyAgent.speed = 0;
                 enemyScript.canIShoot = false;
                 stunParticleClone = Instantiate(stunParticle, other.transform);
-                Debug.Log("Projectile destroys itself");
                 iHaveNotHit = false;
                 Destroy(this.gameObject, 1f);
             }
 
-          
-            GetComponent<MeshRenderer>().enabled = false;
+
+            mr.enabled = false;
            
 
         }

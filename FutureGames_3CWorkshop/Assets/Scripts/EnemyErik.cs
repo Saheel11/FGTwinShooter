@@ -106,14 +106,9 @@ public class EnemyErik : MonoBehaviour
             GameObject enemyProjectile = Instantiate(projectile, firePoint.transform.position, firePoint.transform.rotation);
             enemyProjectile.GetComponent<Rigidbody>().AddForce(transform.forward * projectileSpeed);
             enemyProjectile.GetComponent<Projectile>().whatIHit = "OnlyPlayer";          
-            Destroy(enemyProjectile, 2f);
+            Destroy(enemyProjectile, 10f);
         }
     }
 
-    /*void EnemyRotate()        NOT USED RIGHT NOW
-    {
-        Vector3 name = new Vector3(0f, 0.2f, 0f);
-        transform.Rotate(name);
-    }
-    */
+  
 }

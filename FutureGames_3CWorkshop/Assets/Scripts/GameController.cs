@@ -9,16 +9,7 @@ public class GameController : MonoBehaviour
     public float timer;
     public float startTime = 300f;
     public float endTime;
-
     public PlayerStats playerStats;
-
-    public UIController ui;
-   
-    
-    //public int min = Mathf.FloorToInt(timer / 60); testing if we can turn them into minutes and seconds
-    //public int sec = Mathf.FloorToInt(timer % 60);
-    
-
 
     private void Start()
     {
@@ -44,13 +35,13 @@ public class GameController : MonoBehaviour
            
             GameWin();
             
-        }
-       
+        }  
     }
-
     public void GameLose()
     {              
-       SceneManager.LoadScene("LoseScene");       
+       SceneManager.LoadScene("LoseScene");
+        timer = startTime;
+        Destroy(this.gameObject);
     }
    
     public void GameWin()
@@ -60,8 +51,6 @@ public class GameController : MonoBehaviour
 
     public float GetTimer()
     {
-
-        
         return timer;
     }
 

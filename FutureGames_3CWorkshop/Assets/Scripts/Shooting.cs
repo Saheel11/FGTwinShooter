@@ -6,19 +6,13 @@ using UnityEngine.InputSystem;
 
 public class Shooting : MonoBehaviour
 {
-    public Transform firePoint;
-    
-    public GameObject projectile;
-    
-    public float projectileSpeed;
-    
-    public int projectileAmmo;
-    
+    public Transform firePoint;   
+    public GameObject projectile;   
+    public float projectileSpeed;   
+    public int projectileAmmo;   
     public Vector2 rightStickPosition;
-
     public AudioSource audioSource;
     public AudioClip shootingClip;
-
     public UIController uiController;
     
   
@@ -35,7 +29,7 @@ public class Shooting : MonoBehaviour
                 uiController = go.GetComponent<UIController>();
 
             }
-           //uiController = go.GetComponent<UIController>();
+          
 
         }
     }
@@ -55,11 +49,11 @@ public class Shooting : MonoBehaviour
             projectileClone.GetComponent<Projectile>().whatIHit = "Enemy";
             projectileClone.GetComponent<SphereCollider>().radius = 1;
             
-            //projectileAmmo--;
+            
             IncreaseAmmo(-1);
             audioSource.clip = shootingClip;
             audioSource.Play();
-            Destroy(projectileClone, 2f);
+            Destroy(projectileClone, 10f);
 
         }
         
@@ -81,8 +75,6 @@ public class Shooting : MonoBehaviour
 
     public void IncreaseAmmo(int ammoincrease)
     {
-
-
 
         projectileAmmo = Mathf.Clamp(projectileAmmo, 0, 6);
 

@@ -26,16 +26,12 @@ public class Textremain : MonoBehaviour
         }
 
         winTimer = controller.GetTimer();
-        timeWinString.text = "GG Your time to beat was " + winTimer.ToString("f0");
+        timeWinString.text = "GG, your time was " + winTimer.ToString("f0");
 
         Destroy(controller.gameObject);
     }
 
-   /* public void TimerRemain()
-    {
-        controller.GetTimer();
-        winTimer = controller.timer; 
-    }*/
+
 
 
 }

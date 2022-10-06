@@ -12,7 +12,6 @@ public class PlayerDashScripts : MonoBehaviour
     CharacterController characterController;
     public PlayerStats playerStats;
     public Shooting shooting;
-    int go;
 
     public float dashFloat = 30;
     public float maxTimer;
@@ -22,7 +21,7 @@ public class PlayerDashScripts : MonoBehaviour
     public Collider[] colliders;
 
     [HideInInspector] public bool imDashing;
-    [HideInInspector] public Vector2 rightStickPosition;
+    [HideInInspector] public Vector2 leftStickPosition;
     
     [HideInInspector] public float resetDashCooldown = 0f;
 
@@ -36,7 +35,7 @@ public class PlayerDashScripts : MonoBehaviour
     [HideInInspector] public GameObject dashParticlePosition;
     public GameObject hitEnemyParticle;
     [HideInInspector] public GameObject hitEnemyParticleClone;
-    public Transform transformer;
+    [HideInInspector] public Transform transformer;
     public Transform playerTransform;
     public EnemyManager enemyManager;
 
@@ -62,7 +61,7 @@ public class PlayerDashScripts : MonoBehaviour
     {
 
         transformer.position = transform.position;
-        Vector3 testDirection = new Vector3(rightStickPosition.x, 0, rightStickPosition.y);
+        Vector3 testDirection = new Vector3(leftStickPosition.x, 0, leftStickPosition.y);
         
         colliders = Physics.OverlapSphere(transform.position, 1, mask);
   
@@ -80,31 +79,31 @@ public class PlayerDashScripts : MonoBehaviour
                 imDashing = false;
                 DashPowerUp(kills);
             }
-            foreach (var hitCollerer in colliders)
+            foreach (var hitCollider in colliders)
             {
                 playerStats.dashCooldown = resetDashCooldown;
                 playerStats.IncreaseMeter();
                 shooting.IncreaseAmmo(1); 
-                hitEnemyParticleClone = Instantiate(hitEnemyParticle, hitCollerer.transform);
+                hitEnemyParticleClone = Instantiate(hitEnemyParticle, hitCollider.transform);
                
 
-                if (hitCollerer.GetComponent<AudioSource>() != null)
+                if (hitCollider.GetComponent<AudioSource>() != null)
                 {
-                    hitCollerer.GetComponent<AudioSource>().Play();
+                    hitCollider.GetComponent<AudioSource>().Play();
                     kills += 1;
-                    if (hitCollerer.GetComponent<EnemyErik>() != null)
+                    if (hitCollider.GetComponent<EnemyErik>() != null)
                     {
-                        hitCollerer.GetComponent<EnemyErik>().canIShoot = false;
-                        hitCollerer.GetComponent<NavMeshAgent>().speed = 0;
-                        hitCollerer.GetComponent<BoxCollider>().enabled = false;
+                        hitCollider.GetComponent<EnemyErik>().canIShoot = false;
+                        hitCollider.GetComponent<NavMeshAgent>().speed = 0;
+                        hitCollider.GetComponent<BoxCollider>().enabled = false;
                         enemyManager.RandomSpawn();
                         enemyManager.amountOfEnemiesInLevel--;
                     }
-                    Destroy(hitCollerer.gameObject, 1.2f);
+                    Destroy(hitCollider.gameObject, 1.2f);
                 }
                 else
                 {
-                    Destroy(hitCollerer.gameObject);
+                    Destroy(hitCollider.gameObject);
 
                 }
             }
@@ -134,16 +133,14 @@ public class PlayerDashScripts : MonoBehaviour
         }   
 
     }
-
-
-    
+ 
     public void OnMove(InputValue lookValue)
     {
-        rightStickPosition = lookValue.Get<Vector2>();
+        leftStickPosition = lookValue.Get<Vector2>();
 
-        if (rightStickPosition != Vector2.zero)
+        if (leftStickPosition != Vector2.zero)
         {
-            float angle = Mathf.Atan2(rightStickPosition.x, rightStickPosition.y) * Mathf.Rad2Deg;
+            float angle = Mathf.Atan2(leftStickPosition.x, leftStickPosition.y) * Mathf.Rad2Deg;
             transformer.rotation = Quaternion.Euler(0, angle, 0);
         }
     }

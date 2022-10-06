@@ -22,14 +22,7 @@ public class EnemyManager : MonoBehaviour
 
     int checkedSpawnPositions;
     
-    private void Awake()
-    {
-        //usedSpawnPositions = new bool[possibleSpawnPositions.Length];
-    }
-    private void Start()
-    {
-       //possibleSpawnPositions = new Transform[10];
-    }
+
     private void FixedUpdate()
     {
         enemySpawnTimer += Time.deltaTime; //Starting timer for enemy to spawn
@@ -88,7 +81,7 @@ public class EnemyManager : MonoBehaviour
             GameObject newEnemy = Instantiate(enemyPrefab, possibleSpawnPositions[spawnIndex].position, possibleSpawnPositions[spawnIndex].rotation);
             checkedSpawnPositions = spawnIndex;
             amountOfEnemiesInLevel++;
-            Debug.Log("Spawning 1 enemy");
+           
 
         }
 

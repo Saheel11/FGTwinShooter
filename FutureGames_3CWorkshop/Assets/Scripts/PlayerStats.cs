@@ -6,7 +6,7 @@ public class PlayerStats : MonoBehaviour
 {
     public int meter;
     
-    // Added these four for testing purposes
+
     public int increaseMeter; 
     public int decreaseMeter; 
     public int maxMeter = 100;

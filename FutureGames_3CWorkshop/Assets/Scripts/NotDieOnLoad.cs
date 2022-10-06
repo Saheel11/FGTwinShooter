@@ -13,7 +13,7 @@ public class NotDieOnLoad : MonoBehaviour
     public void RemainAlive()
     {
         string whatSceneImIn = SceneManager.GetActiveScene().name;
-        Debug.Log(whatSceneImIn);
+       
         if (whatSceneImIn == "MainScene")
         {
 
