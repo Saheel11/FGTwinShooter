@@ -30,6 +30,11 @@ public class PlayerStats : MonoBehaviour
             dashCooldown = 0;
             canDash = true;
         }
+
+        if (meter < minMeter)
+        {
+            meter = minMeter;
+        }
     }
 
 
