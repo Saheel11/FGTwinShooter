@@ -84,7 +84,7 @@ public class PlayerDashScripts : MonoBehaviour
                 playerStats.IncreaseMeter();
                 shooting.IncreaseAmmo(1); 
                 hitEnemyParticleClone = Instantiate(hitEnemyParticle, hitCollerer.transform);
-                enemyManager.RandomSpawn();
+               
 
                 if (hitCollerer.GetComponent<AudioSource>() != null)
                 {
@@ -95,6 +95,8 @@ public class PlayerDashScripts : MonoBehaviour
                         hitCollerer.GetComponent<EnemyErik>().canIShoot = false;
                         hitCollerer.GetComponent<NavMeshAgent>().speed = 0;
                         hitCollerer.GetComponent<BoxCollider>().enabled = false;
+                        enemyManager.RandomSpawn();
+                        enemyManager.amountOfEnemiesInLevel--;
                     }
                     Destroy(hitCollerer.gameObject, 1.2f);
                 }
