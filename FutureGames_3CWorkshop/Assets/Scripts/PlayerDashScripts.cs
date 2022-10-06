@@ -4,6 +4,8 @@ using System.Runtime.Remoting.Messaging;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using TMPro;
 
 public class PlayerDashScripts : MonoBehaviour
 {
@@ -38,6 +40,10 @@ public class PlayerDashScripts : MonoBehaviour
     public Transform playerTransform;
     public EnemyManager enemyManager;
 
+    public GameObject extraDashParticle;
+    [HideInInspector] public GameObject extraDashParticleClone;
+
+    public TextMeshProUGUI dashPlusText;
 
     public bool extraDash;
     public bool extraDashRemove;
@@ -118,10 +124,11 @@ public class PlayerDashScripts : MonoBehaviour
             audioSource.clip = clipDash;
             audioSource.Play();
             dashParticlePosition = Instantiate(dashParticle, transform);
+            Destroy(extraDashParticleClone);
+            dashPlusText.gameObject.SetActive(false);
             if (playerStats.canDash == false)
             {
                 extraDashRemove = true;
-
             }
             else
             {
@@ -151,7 +158,8 @@ public class PlayerDashScripts : MonoBehaviour
         if (howManyKílled >= 2)
         {
             extraDash = true;
-
+            extraDashParticleClone = Instantiate(extraDashParticle, transform);
+            dashPlusText.gameObject.SetActive(true);
 
         }
 

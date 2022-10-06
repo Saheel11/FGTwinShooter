@@ -448,6 +448,17 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: c42b56cd2f5dd0845998f09fef5d39c9, type: 3}
+--- !u!114 &183507715 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8312513831630801430, guid: c42b56cd2f5dd0845998f09fef5d39c9, type: 3}
+  m_PrefabInstance: {fileID: 183507714}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &206404218 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4027251096249325988, guid: 177d96d73eb98c748888b5138d7bceb5, type: 3}
@@ -7011,6 +7022,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7767944449521785420, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
+      propertyPath: dashPlusText
+      value: 
+      objectReference: {fileID: 183507715}
     - target: {fileID: 7767944449521785420, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
       propertyPath: enemyManager
       value: 
