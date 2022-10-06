@@ -29,10 +29,31 @@ public class Projectile : MonoBehaviour
     public GameObject playerGotHitParticle;
     [HideInInspector] public GameObject playerGotHitParticleClone;
 
+    public MeshRenderer mr;
+
+    public Material plBulletMat;
+
+    public Material enemeyBulletMat;
 
     private void Start()
     {
-        
+
+        mr = GetComponent<MeshRenderer>();
+        if(whatIHit =="Enemy")
+        {
+            mr.material = plBulletMat;
+
+
+
+        }
+        else
+        {
+
+            mr.material = enemeyBulletMat;
+
+        }
+
+
         audioSource = GetComponent<AudioSource>();
         iHaveNotHit = true;
 
