@@ -15,12 +15,31 @@ public class UIController : MonoBehaviour
 
     public Image[] ammoList;
 
-    
+    public bool win;
     private void Update()
     {
-        cooldownText.text = gameController.GetComponent<GameController>().timer.ToString("f0");
-        meterSlider.value = player.GetComponent<PlayerStats>().meter;
-        cooldownSlider.value = player.GetComponent<PlayerStats>().dashCooldown;
+        if (!win)
+        {
+            cooldownText.text = gameController.GetComponent<GameController>().timer.ToString("f0");
+            meterSlider.value = player.GetComponent<PlayerStats>().meter;
+            cooldownSlider.value = player.GetComponent<PlayerStats>().dashCooldown;
+        }
+        
+        /*{
+            cooldownText.enabled = false;
+            meterSlider.enabled = false;
+            cooldownSlider.enabled = false;
+
+            foreach (Image ammo in ammoList)
+            {
+                ammo.enabled = false;
+            }
+                */
+
+        
+        
+
+       
     }
 
 

@@ -1944,6 +1944,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6908943716506935414}
   - component: {fileID: 6908943716506935415}
+  - component: {fileID: 6138454645249097971}
   - component: {fileID: 6908943716506935408}
   - component: {fileID: 6908943716506935409}
   - component: {fileID: 6908943716506935410}
@@ -2000,6 +2001,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &6138454645249097971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6908943716506935411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3f88bae0e242a74eb2178ddcdc25a8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 6908943716506935415}
 --- !u!114 &6908943716506935408
 MonoBehaviour:
   m_ObjectHideFlags: 0

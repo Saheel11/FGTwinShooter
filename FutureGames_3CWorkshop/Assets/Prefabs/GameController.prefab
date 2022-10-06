@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 4027251096249325990}
   - component: {fileID: 4027251096249325989}
   - component: {fileID: 4027251096249325991}
+  - component: {fileID: 3247376100653511398}
   m_Layer: 0
   m_Name: GameController
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,6 +49,8 @@ MonoBehaviour:
   timer: 0
   startTime: 300
   endTime: 0
+  playerStats: {fileID: 2627654512550365899, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
+  ui: {fileID: 6908943716506935410, guid: c42b56cd2f5dd0845998f09fef5d39c9, type: 3}
 --- !u!114 &4027251096249325991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,5 +65,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 8990729160175489502, guid: dfacfd3308ca3984794bf1f1513219c2, type: 3}
   enemySpawnTimer: 0
-  amountOfEnemiesSpawned: 0
   enemySpawnTimeCooldown: 5
+  maxAmountOfEnemies: 0
+  amountOfEnemiesInLevel: 0
+  possibleSpawnPositions: []
+  playerStats: {fileID: 2627654512550365899, guid: 86f1967622fbece4eabcd0652b325176, type: 3}
+--- !u!114 &3247376100653511398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4027251096249325988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3f88bae0e242a74eb2178ddcdc25a8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

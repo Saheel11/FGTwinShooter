@@ -11,21 +11,19 @@ public class GameController : MonoBehaviour
     public float endTime;
 
     public PlayerStats playerStats;
-    
 
-    /*public GameState State; THIS IS FOR GAMESTATES
-
-    public static event Action<GameState> OnGameStateChanged;
+    public UIController ui;
+   
     
     //public int min = Mathf.FloorToInt(timer / 60); testing if we can turn them into minutes and seconds
     //public int sec = Mathf.FloorToInt(timer % 60);
-    */
+    
 
 
     private void Start()
     {
         timer = startTime;
-        //ChangeGameState(GameState.Startscreen); THIS IS FOR GAMESTATES
+       
     }
 
     private void FixedUpdate()
@@ -43,12 +41,11 @@ public class GameController : MonoBehaviour
         }
         if (playerStats.meter >= 100)
         {
+           
             GameWin();
+            
         }
-        /*if (meter <= 0)
-        {
-            GameLose();
-        }*/
+       
     }
 
     public void GameLose()
@@ -61,54 +58,11 @@ public class GameController : MonoBehaviour
        SceneManager.LoadScene("WinScene");       
     }
 
-   
-
-    /* public enum GameState THIS IS FOR GAMESTATES
-     {
-         Startscreen, 
-         Play,
-         Win,
-         Lose
-     }
-    
-
-    public void ChangeGameState(GameState newState)
+    public float GetTimer()
     {
-        State = newState;
 
-        switch (newState)
-        {
-            case GameState.Startscreen:
-                HandleStartscreen();
-                break;
-            case GameState.Play:
-                //HandlePlay();
-                break;
-            case GameState.Win:
-                break;
-            case GameState.Lose:
-                break;
-            default:
-                throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
-        }
-        OnGameStateChanged(newState);
         
+        return timer;
     }
-
-    private void HandlePlay()
-    {
-        if (meter >= 100) ChangeGameState(GameState.Win);
-        else if (timer <= 0) ChangeGameState(GameState.Lose);
-        else ChangeGameState(GameState.Play);
-
-    }
-    
-
-    private void HandleStartscreen()
-    {
-
-    }
-    */
-
 
 }

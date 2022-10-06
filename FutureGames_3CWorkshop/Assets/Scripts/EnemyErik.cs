@@ -10,14 +10,15 @@ public class EnemyErik : MonoBehaviour
     public Transform playerTarget;
     public NavMeshAgent enemyAgent;
     public LayerMask playerMask;
-   
+
+    [Header("Enemy moving")]
     public Vector3 enemyTargetPosition;
     public float enemySpeed;
     public float enemyY;
     public float timerMove;
     public float maxTimerMove;
 
-    //ShootStuff
+    [Header("Enemy shooting")]
     public Transform firePoint;
     public GameObject projectile;
     public float projectileSpeed;
@@ -26,7 +27,7 @@ public class EnemyErik : MonoBehaviour
     public float maxTimerShoot;
     public bool canIShoot;
     
-    [Header("Values for random positions")] 
+    [Header("Enemy movement: Random positions")] 
     public float minXValue = 1;
     public float maxXValue = 50;
     public float minZValue = 1;
@@ -48,13 +49,8 @@ public class EnemyErik : MonoBehaviour
   void Update()
   {
         EnemyMove();                   
-
-        //EnemyRotate();
-
         CheckForPlayer();
-
         enemyY = transform.position.y;
-
         timerMove -= Time.deltaTime;
         timerShoot += Time.deltaTime;
   }
@@ -74,8 +70,6 @@ public class EnemyErik : MonoBehaviour
     {
         // Move our position a step closer to the target.
         var step = enemySpeed * Time.deltaTime; // calculate distance to move
-        //transform.position = Vector3.MoveTowards(transform.position, enemyTargetPosition, step);
-        
         enemyAgent.SetDestination(enemyTargetPosition);
 
         // Check if the position of the cube and sphere are approximately equal.
@@ -88,7 +82,6 @@ public class EnemyErik : MonoBehaviour
         if (transform.position == new Vector3(enemyTargetPosition.x, enemyY, enemyTargetPosition.z) || timerMove <= 0)
         {
             enemyTargetPosition = new Vector3(Random.Range(minXValue, maxXValue), enemyY, Random.Range(minZValue, maxZValue));
-            //Debug.Log("jejeaje");
             timerMove = maxTimerMove;
         }
 
@@ -103,7 +96,6 @@ public class EnemyErik : MonoBehaviour
         Debug.DrawRay(transform.position, transform.forward * 50f, Color.red, 0.01f);
         if (seePlayer)
         {
-            //Debug.Log("hej" + result.collider.name);
             AttackPlayer();
         }
     }
