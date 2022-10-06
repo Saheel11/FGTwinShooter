@@ -325,6 +325,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6908943714544182425, guid: c42b56cd2f5dd0845998f09fef5d39c9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -21.699951
+      objectReference: {fileID: 0}
     - target: {fileID: 6908943714760046416, guid: c42b56cd2f5dd0845998f09fef5d39c9, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -8930,6 +8934,10 @@ PrefabInstance:
       propertyPath: startTime
       value: 120
       objectReference: {fileID: 0}
+    - target: {fileID: 4027251096249325989, guid: 177d96d73eb98c748888b5138d7bceb5, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 958273088}
     - target: {fileID: 4027251096249325990, guid: 177d96d73eb98c748888b5138d7bceb5, type: 3}
       propertyPath: m_RootOrder
       value: 6
