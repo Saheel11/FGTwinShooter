@@ -72,11 +72,7 @@ public class PlayerDashScripts : MonoBehaviour
 
           dashTimer -=Time.deltaTime;
 
-            if (extraDashRemove == true)
-            {
-                extraDash = false;
-
-            }
+        
 
             if (dashTimer < 0)
             {
@@ -116,24 +112,23 @@ public class PlayerDashScripts : MonoBehaviour
     }
     public void OnDash()
     {
-        if (playerStats.canDash == true || extraDash)
+        if (playerStats.canDash == true)
         {
             imDashing = true;
             dashTimer = maxTimer;
-            playerStats.StartDashCooldown();
             audioSource.clip = clipDash;
             audioSource.Play();
             dashParticlePosition = Instantiate(dashParticle, transform);
             Destroy(extraDashParticleClone);
             dashPlusText.gameObject.SetActive(false);
-            if (playerStats.canDash == false)
+            if (extraDash == false)
             {
-                extraDashRemove = true;
+                playerStats.StartDashCooldown();
             }
             else
             {
 
-                extraDashRemove = false;
+                extraDash = false;
 
             }
         }   
