@@ -36,6 +36,7 @@ public class PlayerDashScripts : MonoBehaviour
     [HideInInspector] public GameObject hitEnemyParticleClone;
     public Transform transformer;
     public Transform playerTransform;
+    public EnemyManager enemyManager;
 
     void Start()
     {
@@ -58,9 +59,7 @@ public class PlayerDashScripts : MonoBehaviour
         if (imDashing)
         {
           characterController.Move(transformer.transform.forward * dashFloat * Time.deltaTime);
-          
-          //dashParticle.transform.position = transform.position;
-          
+
           dashTimer -=Time.deltaTime; 
             
             if(dashTimer < 0)
@@ -70,15 +69,12 @@ public class PlayerDashScripts : MonoBehaviour
             }
             foreach (var hitCollerer in colliders)
             {
-                Debug.Log("iHit" + hitCollerer.gameObject.name);
                 playerStats.dashCooldown = resetDashCooldown;
                 playerStats.IncreaseMeter();
-                shooting.IncreaseAmmo(1); // switch this to check how many player have killed
-                Debug.Log(shooting.projectileAmmo);
+                shooting.IncreaseAmmo(1); 
                 hitEnemyParticleClone = Instantiate(hitEnemyParticle, hitCollerer.transform);
-                
+                enemyManager.RandomSpawn();
 
-                //hitCollerer.GetComponent<AudioSource>().clip = clipDeath;
                 if (hitCollerer.GetComponent<AudioSource>() != null)
                 {
                     hitCollerer.GetComponent<AudioSource>().Play();
@@ -89,7 +85,6 @@ public class PlayerDashScripts : MonoBehaviour
                         hitCollerer.GetComponent<NavMeshAgent>().speed = 0;
                         hitCollerer.GetComponent<BoxCollider>().enabled = false;
                     }
-
                     Destroy(hitCollerer.gameObject, 1.2f);
                 }
                 else
@@ -97,9 +92,6 @@ public class PlayerDashScripts : MonoBehaviour
                     Destroy(hitCollerer.gameObject);
 
                 }
-
-
-               // Destroy(hitCollerer.gameObject, 1.2f);
             }
         }
     }
