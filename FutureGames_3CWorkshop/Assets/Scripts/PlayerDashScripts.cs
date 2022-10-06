@@ -38,6 +38,10 @@ public class PlayerDashScripts : MonoBehaviour
     public Transform playerTransform;
     public EnemyManager enemyManager;
 
+
+    public bool extraDash;
+    public bool extraDashRemove;
+    public int kills;
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -60,12 +64,19 @@ public class PlayerDashScripts : MonoBehaviour
         {
           characterController.Move(transformer.transform.forward * dashFloat * Time.deltaTime);
 
-          dashTimer -=Time.deltaTime; 
-            
-            if(dashTimer < 0)
+          dashTimer -=Time.deltaTime;
+
+            if (extraDashRemove == true)
+            {
+                extraDash = false;
+
+            }
+
+            if (dashTimer < 0)
             {
                 Destroy(dashParticlePosition);
                 imDashing = false;
+                DashPowerUp(kills);
             }
             foreach (var hitCollerer in colliders)
             {
@@ -78,8 +89,8 @@ public class PlayerDashScripts : MonoBehaviour
                 if (hitCollerer.GetComponent<AudioSource>() != null)
                 {
                     hitCollerer.GetComponent<AudioSource>().Play();
-
-                    if(hitCollerer.GetComponent<EnemyErik>() != null)
+                    kills += 1;
+                    if (hitCollerer.GetComponent<EnemyErik>() != null)
                     {
                         hitCollerer.GetComponent<EnemyErik>().canIShoot = false;
                         hitCollerer.GetComponent<NavMeshAgent>().speed = 0;
@@ -97,7 +108,7 @@ public class PlayerDashScripts : MonoBehaviour
     }
     public void OnDash()
     {
-        if (playerStats.canDash == true)
+        if (playerStats.canDash == true || extraDash)
         {
             imDashing = true;
             dashTimer = maxTimer;
@@ -105,6 +116,17 @@ public class PlayerDashScripts : MonoBehaviour
             audioSource.clip = clipDash;
             audioSource.Play();
             dashParticlePosition = Instantiate(dashParticle, transform);
+            if (playerStats.canDash == false)
+            {
+                extraDashRemove = true;
+
+            }
+            else
+            {
+
+                extraDashRemove = false;
+
+            }
         }   
 
     }
@@ -120,5 +142,19 @@ public class PlayerDashScripts : MonoBehaviour
             float angle = Mathf.Atan2(rightStickPosition.x, rightStickPosition.y) * Mathf.Rad2Deg;
             transformer.rotation = Quaternion.Euler(0, angle, 0);
         }
+    }
+
+    public void DashPowerUp(int howManyKílled)
+    {
+        if (howManyKílled >= 2)
+        {
+            extraDash = true;
+
+
+        }
+
+        kills = 0;
+
+
     }
 }
