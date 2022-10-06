@@ -314,6 +314,12 @@ MonoBehaviour:
   hitEnemyParticleClone: {fileID: 0}
   transformer: {fileID: 0}
   playerTransform: {fileID: 5381551921105551270, guid: 8d69720ace4b58142913ff19d7dd7ed6, type: 3}
+  enemyManager: {fileID: 0}
+  extraDashParticle: {fileID: 7393443332271465081, guid: 6aad1cc553c3c4a4caea5c8e9a2c6b6d, type: 3}
+  extraDashParticleClone: {fileID: 0}
+  extraDash: 0
+  extraDashRemove: 0
+  kills: 0
 --- !u!114 &2379745700866262097
 MonoBehaviour:
   m_ObjectHideFlags: 0
